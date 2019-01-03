@@ -13,8 +13,6 @@
 import Data.List
 
 main = do
-    a <- getContents
-    mapM_ putStrLn $ sortInputs . map (\n -> read n :: Int) . lines $ a
-
-sortInputs :: [Int] -> [String]
-sortInputs (x:xs) = map show $ sort xs
+    a <- getLine
+    s <- getContents
+    mapM_ putStrLn $ map show $ sort . map (\n -> read n :: Int) . lines $ s
